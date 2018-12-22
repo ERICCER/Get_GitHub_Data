@@ -5,7 +5,6 @@ import pygal
 import requests
 import pygal
 from pygal.style import LightenStyle as LS, LightColorizedStyle as LCS
-from setting import my_config as my_config
 
 url = 'https://api.github.com/search/repositories?q=language:python&sort=start'
 #将这个网址储存在变量url中
@@ -26,7 +25,7 @@ for repo_dict in repo_dict:
 
 my_style = LS('#333366',base_style = LCS)
 
-"""
+
 #config Begin
 my_config = pygal.Config()
 my_config.x_label_rotation = 45
@@ -38,7 +37,7 @@ my_config.truncate_label = 45
 my_config.show_y_guides = False
 my_config.width = 1000
 #config Finish
-"""
+
 
 chart = pygal.Bar(my_config, style = my_style)
 chart.title = 'Github上热门的Python项目'
