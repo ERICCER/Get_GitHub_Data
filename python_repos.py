@@ -1,9 +1,10 @@
 #coding = UTF-8
 #Make of python3
 #Web API
+import pygal
 import requests
 import pygal
-from pygal.style import LightColorizedStyle as LCS, LightenStyle as LS
+from pygal.style import LightenStyle as LS, LightColorizedStyle as LCS
 
 url = 'https://api.github.com/search/repositories?q=language:python&sort=start'
 #将这个网址储存在变量url中
@@ -42,5 +43,3 @@ chart.x_labels = names
 
 chart.add('',stars)
 chart.render_to_file('python_repos.svg')
-
-
